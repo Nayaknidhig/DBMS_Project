@@ -1,0 +1,109 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Oxygen;
+}
+.background{
+	background: #eb01a5;
+	background-image:url("../img/background.jpg");
+	background-image:url("../img/background.jpg"),linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+	background-size: cover;
+	background-position: center;
+	margin-top:40px; 
+}
+.regform{
+	width: 800px;
+	background: linear-gradient(to right,#ff105f,#ffad06);
+	margin: auto;
+	color: #000000;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	border-radius: 15px 15px 0px 0px;
+}
+.main{
+	background-color: rgb(225,225,225,.5);
+	width: 800px;
+	margin: auto;
+}
+form{
+	padding: 10px;
+}
+#name{
+	width: 100%;
+	height: 70px;
+}
+.name{
+	margin-left: 25px;
+	margin-top:30px;
+	width:125px;
+	color: black;
+	font-size: 18px;
+	font-weight: 700; 
+}
+.firstname{
+	position: relative;
+	left: 178px;
+	top:-35px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 22px;
+	font-size: 16px;
+}
+.lastname{
+	position: relative;
+	left: 417px;
+	top:-80px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 22px;
+	font-size: 16px;
+}
+.email{
+	position: relative;
+	left: 178px;
+	top: -32px;
+	line-height: 40px;
+	width: 532px;
+	border-radius: 6px;
+	padding: 0 22px;
+	font-size: 16px;
+	color: #555;
+}
+.user-id{
+	position: relative;
+	left: 178px;
+	top:-32px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 22px;
+	font-size: 16px;
+}
+.option{
+	position: relative;
+	left: 178px;
+	top:-24px;
+	line-height: 40px;
+	border-radius: 6px;
+	padding: 0 22px;
+	font-size: 16px;
+}
+.label{
+	position: relative;
+	left: 178px;
+	top:-10px;
+	line-height: 40px;
+	/*padding: 0 22px;*/
+	font-size: 16px;
+}
+.submit-btn{
+	width: 50%;
+	padding: 10x 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: linear-gradient(to right,#ff105f,#ffad06);
+	border:0;
+	outline: none;
+	border-radius: 30px;
+	height: 35px;
+}
