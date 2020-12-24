@@ -12,6 +12,7 @@ app.use(
     })
 );
 
+//------------------------------------------------------------------//
 
 //Connect To MySQL
 //Use createPool to auto close MySQL Connections
@@ -29,11 +30,12 @@ app.set("view engine", "ejs");
 //For Initializing all Project Files in DIR
 app.use(express.static(__dirname));
 
+//------------------------------------------------------------------//
 
 app.get("/", (req, res) => {
-    
     res.sendFile(__dirname + "/views/home.html");
 });
+
 //------------------------------------------------------------------//
 
 app.get("/newHome", (req, res) => {
@@ -42,10 +44,24 @@ app.get("/newHome", (req, res) => {
     let signupMail = req.query.regMail;
     let signupPass = req.query.regPass;
     let signupName = req.query.regName;
-    console.log(`${signupMail}...${signupPass}...${signupName}`);
-    res.render('homenew',{
-
-    });
+    if(loginMail === undefined){
+        //user signed up
+        //check if regMail is in the DB already
+        //if it isnt, then enter regMail,regPass,regName to DB
+        //if it exists, ask user to log in and go to /homenew
+        res.render('homenew',{});
+    } else if(signupMail === undefined) {
+        // user logged in
+        //check if logMail exists in DB
+        //if it doesnt, then ask user to Register
+        //if it exists, go to /homenew
+        res.render('homenew',{});
+    }
+//let sql = "INSERT INTO `user`() VALUES('" + name + "','" + email + "','" + password + "');";
+    //con.query(sql, (err,result) => {
+    //     if (err) throw err;
+    //     console.log(result[0].fullname)
+    // });
 });
 
 //------------------------------------------------------------------//
@@ -59,15 +75,6 @@ app.get("/myPage", (req, res) => {
 //------------------------------------------------------------------//
 
 app.get("/registration", (req, res) => {
-
-    //let sql = "INSERT INTO `user`(`fullname` ,`email` , `password` ) VALUES('" + name + "','" + email + "','" + password + "');";
-    //con.query(sql, (err,result) => {
-    //     if (err) throw err;
-    //     console.log(result[0].fullname)
-    // });
-
-
-
     res.render("registration",{});
 });
 
