@@ -1,14 +1,7 @@
 const express = require("express");
 const app = express();
-const https = require("https");
 const body = require("body-parser");
-//const fileupload = require("express-fileupload")
 const mysql = require("mysql");
-const dotenv = require('dotenv');
-
-
-//Setup env variables
-dotenv.config();
 
 //-----------------------------------------------------------------------------------//
 
@@ -44,6 +37,12 @@ app.get("/", (req, res) => {
 //------------------------------------------------------------------//
 
 app.get("/newHome", (req, res) => {
+    let loginMail = req.query.logMail;
+    let loginPass = req.query.logPass;
+    let signupMail = req.query.regMail;
+    let signupPass = req.query.regPass;
+    let signupName = req.query.regName;
+    console.log(`${signupMail}...${signupPass}...${signupName}`);
     res.render('homenew',{
 
     });
@@ -60,15 +59,13 @@ app.get("/myPage", (req, res) => {
 //------------------------------------------------------------------//
 
 app.get("/registration", (req, res) => {
-    let email = req.body.logmail;
-    let password = req.body.logpass;
+
     //let sql = "INSERT INTO `user`(`fullname` ,`email` , `password` ) VALUES('" + name + "','" + email + "','" + password + "');";
     //con.query(sql, (err,result) => {
     //     if (err) throw err;
     //     console.log(result[0].fullname)
     // });
-    console.log(email);
-    console.log(password);
+
 
 
     res.render("registration",{});

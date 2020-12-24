@@ -14,16 +14,16 @@
 			<button type="button" class="toggle-btn" onclick="login()">Log In</button>
 			<button type="button" class="toggle-btn" onclick="register()" >Register</button>
 		</div>
-			<form id="login" action="/newHome" method="POST" class="input-group">
-				<input type="text\email" class="input-field" name="logmail" placeholder="E-mail Id" required>
-				<input type="text" class="input-field" name="logpass" placeholder="Enter Password" required>
+			<form id="login" action="/newHome" class="input-group">
+				<input type="email" class="input-field" name="logMail" placeholder="E-mail ID" required>
+				<input type="text" class="input-field" name="logPass" placeholder="Enter Password" required>
 				<input type="checkbox" class="check-box" ><span id="Remember">Remember Password</span>
 				<button type="submit"  class="submit-btn">Log In</button>
 			</form>
-			<form id="register" action="/newHome" method="POST" class="input-group">
-				<input type="text" class="input-field" name="regname" placeholder="Name" required>
-				<input type="email" class="input-field" name="regemail" placeholder="E-mail Id" required>
-				<input type="text" class="input-field" name="regpass" placeholder="Enter Password" required>
+			<form id="register" action="/newHome" class="input-group">
+				<input type="text" class="input-field" name="regName" placeholder="Name" required>
+				<input type="email" class="input-field" name="regMail" placeholder="E-mail ID" required>
+				<input type="text" class="input-field" name="regPass" placeholder="Enter Password" required>
 				<input type="checkbox" class="check-box" ><span id="Remember">Remember Password</span>
 				<button type="submit" class="submit-btn">Register</button>
 			</form>
