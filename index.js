@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const https = require("https");
-const bodyP = require("body-parser");
+const body = require("body-parser");
 //const fileupload = require("express-fileupload")
 const mysql = require("mysql");
 const dotenv = require('dotenv');
@@ -14,7 +14,7 @@ dotenv.config();
 
 //For Parsing Response Body
 app.use(
-    bodyP.urlencoded({
+    body.urlencoded({
         extended: true,
     })
 );
@@ -38,19 +38,16 @@ app.use(express.static(__dirname));
 
 
 app.get("/", (req, res) => {
-    let name = req.query.name;
-    let email = req.query.email;
-    let password = req.query.password;
-    // let sql = "INSERT INTO `user`(`fullname` ,`email` , `password` ) VALUES('" + name + "','" + email + "','" + password + "','" + "');";
-    // // let sql = "SELECT * FROM `user` where name ='" + name + "'; ";
-    // con.query(sql, (err,result) => {
-    //     if (err) throw err;
-    //     console.log(result[0].fullname)
-    // });
+    
     res.sendFile(__dirname + "/views/home.html");
 });
 //------------------------------------------------------------------//
 
+app.get("/newHome", (req, res) => {
+    res.render('homenew',{
+
+    });
+});
 
 //------------------------------------------------------------------//
 
@@ -63,6 +60,17 @@ app.get("/myPage", (req, res) => {
 //------------------------------------------------------------------//
 
 app.get("/registration", (req, res) => {
+    let email = req.body.logmail;
+    let password = req.body.logpass;
+    //let sql = "INSERT INTO `user`(`fullname` ,`email` , `password` ) VALUES('" + name + "','" + email + "','" + password + "');";
+    //con.query(sql, (err,result) => {
+    //     if (err) throw err;
+    //     console.log(result[0].fullname)
+    // });
+    console.log(email);
+    console.log(password);
+
+
     res.render("registration",{});
 });
 
